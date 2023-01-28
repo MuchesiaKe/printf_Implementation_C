@@ -1,6 +1,6 @@
 This is to illustrate git branch
 
-We changed this line in master
+We changed this line in feature_branch again
 
 This will remain unchanged
 
