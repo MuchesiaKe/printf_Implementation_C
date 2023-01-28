@@ -1,6 +1,6 @@
 This is to illustrate git branch
 
-We changed  again line in feature_branch again
+We changed   line in branch to create conflict
 
 This will remain unchanged
 
