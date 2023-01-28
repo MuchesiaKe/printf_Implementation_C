@@ -1,6 +1,6 @@
 This is to illustrate git branch
 
-We will change this line in master to create conflict
+We changed this line in master
 
 This will remain unchanged
 
