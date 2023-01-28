@@ -14,6 +14,7 @@ int (*get_func(char s))(char *, va_list)
                 {'s', print_str},
                 {'d', print_int},
                 {'i', print_int},
+		{'b', print_bin},
                 {0, NULL}
         };
 	int i = 0;
