@@ -4,6 +4,7 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <limits.h>
 
 /**
  * struct converter - Struct converter
@@ -30,8 +31,12 @@ int print_int (char * buffer, va_list arg);
 char* buffer_handler(char *buffer);
 char *_memcpy(char *dest, const char *src, unsigned int n);
 void strrev(char *arr, int start, int end);
-char *_itoa(int number, char *arr, int base);
-
+int print_oct(char *buffer, va_list arg);
+char *_itoa(long int number, char *arr, int base);
+int print_uint(char *buffer, va_list arg);
+int print_hex(char *buffer, va_list arg);
+char *_itoa_Hex(long int number, char *arr, int base);
+int print_Hex(char *buffer, va_list arg);
 
 #endif
 

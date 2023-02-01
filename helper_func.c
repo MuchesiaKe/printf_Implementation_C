@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
  *_strcmp - Compares two strings
  *
@@ -40,6 +42,13 @@ char *_memcpy(char *dest, const char *src, unsigned int n)
 	return (dest);
 }
 
+/**
+ * strrev - reverses a string
+ *
+ * @arr: string to be reversed
+ * @start: beginning of the string
+ * @end: end of the string
+ */
 
 void strrev(char *arr, int start, int end)
 {
@@ -57,9 +66,20 @@ void strrev(char *arr, int start, int end)
     strrev(arr, start, end);
 }
 
-char *_itoa(int number, char *arr, int base)
+/**
+ * _itoa - converts an integer to its ASCII value as a string
+ * depending on the specified base
+ *
+ * @number: integer to be converted
+ * @arr: string pointer to store converted integer
+ * @base: base to convert the integer to
+ *
+ * Return: pointer to the resulting string
+ */
+
+char *_itoa(long int number, char *arr, int base)
 {
-    int i = 0, r, negative = 0;
+	    long int i = 0, r, negative = 0;
 
     if (number == 0)
     {
@@ -93,5 +113,55 @@ char *_itoa(int number, char *arr, int base)
     arr[i] = '\0';
 
     return arr;
+}
+
+
+
+/**
+ * _itoa_Hex - converts an integer to its ASCII Hex value as a string
+ *
+ * @number: integer to be converted
+ * @arr: string pointer to store converted integer
+ * @base: base to convert the integer to
+ *
+ * Return: pointer to the resulting string
+ */
+
+char *_itoa_Hex(long int number, char *arr, int base)
+{
+	long int i = 0, r, negative = 0;
+
+    	if (number == 0)
+    	{
+        	arr[i] = '0';
+        	arr[i + 1] = '\0';
+        	return arr;
+    	}
+
+    	if (number < 0 && base == 10)
+    	{
+        	number *= -1;
+        	negative = 1;
+    	}
+
+    	while (number != 0)
+    	{
+        	r = number % base;
+        	arr[i] = (r > 9) ? (r - 10) + 'A' : r + '0';
+        	i++;
+        	number /= base;
+    	}
+
+    	if (negative)
+    	{
+        	arr[i] = '-';
+        	i++;
+    	}
+
+    	strrev(arr, 0, i - 1);
+
+    	arr[i] = '\0';
+
+    	return arr;
 }
 

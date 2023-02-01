@@ -14,11 +14,15 @@ int (*get_func(char s))(char *, va_list)
                 {'s', print_str},
                 {'d', print_int},
                 {'i', print_int},
+		{'o', print_oct},
+		{'u', print_uint},
+		{'x', print_hex},
+		{'X', print_Hex},
                 {0, NULL}
         };
 	int i = 0;
 
-	while (i < 4)
+	while (i < 8)
 	{
 		if (convs[i].specifier == s)
 			return (convs[i].f);
